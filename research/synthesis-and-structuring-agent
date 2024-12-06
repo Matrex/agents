@@ -1,0 +1,41 @@
+{
+  "name": "synthesis_and_structuring_agent",
+  "description": "Synthesizes information from all other agents and organizes it into a coherent structure. Creates a draft of the final output with a logical flow.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "input_data",
+      "structure_format"
+    ],
+    "properties": {
+      "input_data": {
+        "type": "array",
+        "description": "List of inputs from other agents to be synthesized",
+        "items": {
+          "type": "object",
+          "properties": {
+            "agent_name": {
+              "type": "string",
+              "description": "Name of the agent that provided the input"
+            },
+            "content": {
+              "type": "string",
+              "description": "The content provided by the agent"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "agent_name",
+            "content"
+          ]
+        }
+      },
+      "structure_format": {
+        "type": "string",
+        "description": "The desired format or structure of the synthesized output"
+      }
+    },
+    "additionalProperties": false
+  }
+}
