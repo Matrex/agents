@@ -1,0 +1,69 @@
+{
+  "name": "topic_decomposer",
+  "description": "Break down the user’s request into subtopics, research questions, and tasks. Identify key areas to investigate and create a roadmap for research.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "user_request",
+      "subtopics",
+      "research_questions",
+      "tasks",
+      "roadmap"
+    ],
+    "properties": {
+      "user_request": {
+        "type": "string",
+        "description": "The initial request or topic provided by the user"
+      },
+      "subtopics": {
+        "type": "array",
+        "description": "List of subtopics derived from the user request",
+        "items": {
+          "type": "string",
+          "description": "A subtopic that relates to the main user request"
+        }
+      },
+      "research_questions": {
+        "type": "array",
+        "description": "Specific questions to guide the research process",
+        "items": {
+          "type": "string",
+          "description": "A research question related to the user request"
+        }
+      },
+      "tasks": {
+        "type": "array",
+        "description": "Actionable tasks to accomplish the research",
+        "items": {
+          "type": "string",
+          "description": "A task to be performed as part of the research process"
+        }
+      },
+      "roadmap": {
+        "type": "object",
+        "description": "A structured plan outlining the steps for research",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "description": "A sequence of steps to follow in the research process",
+            "items": {
+              "type": "string",
+              "description": "A step in the research roadmap"
+            }
+          },
+          "timeline": {
+            "type": "string",
+            "description": "Estimated time frame for completing the research"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "steps",
+          "timeline"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}
