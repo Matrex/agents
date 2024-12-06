@@ -1,0 +1,55 @@
+{
+  "name": "critical_analysis_agent",
+  "description": "Validates the relevance, credibility, and accuracy of gathered information. Identifies logical gaps, potential biases, or missing perspectives.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "information",
+      "criteria",
+      "potential_biased_sources"
+    ],
+    "properties": {
+      "information": {
+        "type": "array",
+        "description": "List of information items to be analyzed",
+        "items": {
+          "type": "string",
+          "description": "Information item to be analyzed"
+        }
+      },
+      "criteria": {
+        "type": "object",
+        "required": [
+          "relevance",
+          "credibility",
+          "accuracy"
+        ],
+        "properties": {
+          "relevance": {
+            "type": "string",
+            "description": "Criteria for assessing relevance"
+          },
+          "credibility": {
+            "type": "string",
+            "description": "Criteria for assessing credibility"
+          },
+          "accuracy": {
+            "type": "string",
+            "description": "Criteria for assessing accuracy"
+          }
+        },
+        "additionalProperties": false
+      },
+      "potential_biased_sources": {
+        "type": "array",
+        "description": "List of sources identified as potentially biased",
+        "items": {
+          "type": "string",
+          "description": "Source identified as potentially biased"
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
