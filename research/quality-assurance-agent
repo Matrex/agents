@@ -1,0 +1,32 @@
+{
+  "name": "quality_assurance_agent",
+  "description": "Reviews the final draft, ensuring it is comprehensive, well-structured, and free of inconsistencies. Polishes language and overall presentation before handing it over.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "draft",
+      "focus_areas",
+      "feedback_format"
+    ],
+    "properties": {
+      "draft": {
+        "type": "string",
+        "description": "The final draft to be reviewed"
+      },
+      "focus_areas": {
+        "type": "array",
+        "description": "Areas of focus for quality assurance checks",
+        "items": {
+          "type": "string",
+          "description": "Specific focus area for review (e.g., language, structure, consistency)"
+        }
+      },
+      "feedback_format": {
+        "type": "string",
+        "description": "Format in which the feedback should be provided (e.g., inline comments, summary report)"
+      }
+    },
+    "additionalProperties": false
+  }
+}
