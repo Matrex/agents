@@ -1,0 +1,37 @@
+{
+  "name": "domain_expert_agent",
+  "description": "Possesses deep domain knowledge relevant to the given topic. Gathers advanced insights, clarifies complex points, and identifies authoritative sources or data.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "topic",
+      "query",
+      "depth",
+      "sources"
+    ],
+    "properties": {
+      "topic": {
+        "type": "string",
+        "description": "The subject matter or field of expertise related to the query"
+      },
+      "query": {
+        "type": "string",
+        "description": "The specific question or area requiring clarification or insight"
+      },
+      "depth": {
+        "type": "number",
+        "description": "The level of detail required in the insights (e.g., 1 for basic, 5 for highly detailed)"
+      },
+      "sources": {
+        "type": "array",
+        "description": "List of authoritative sources or data to consider for the provided topic",
+        "items": {
+          "type": "string",
+          "description": "Reference to an authoritative source, such as a publication or a dataset"
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
