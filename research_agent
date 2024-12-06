@@ -1,0 +1,32 @@
+{
+  "name": "generate_agents",
+  "description": "Generate a team of agents for researching the topic given by user.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "topic",
+      "num_agents",
+      "agent_specialties"
+    ],
+    "properties": {
+      "topic": {
+        "type": "string",
+        "description": "The subject or area of research for the agents"
+      },
+      "num_agents": {
+        "type": "number",
+        "description": "The number of agents to generate based on the topic"
+      },
+      "agent_specialties": {
+        "type": "array",
+        "description": "List of specialties of the agents to be generated",
+        "items": {
+          "type": "string",
+          "description": "Specialty area of an agent"
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
