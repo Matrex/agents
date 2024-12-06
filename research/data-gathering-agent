@@ -1,0 +1,54 @@
+{
+  "name": "data_gathering_agent",
+  "description": "Finds data, facts, statistics, and references. Searches through known sources (or a provided knowledge base) and provides raw material to support the research.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "search_query",
+      "data_sources",
+      "filters"
+    ],
+    "properties": {
+      "search_query": {
+        "type": "string",
+        "description": "The query string to search for relevant data"
+      },
+      "data_sources": {
+        "type": "array",
+        "description": "List of data sources to search through",
+        "items": {
+          "type": "string",
+          "description": "Identifier or URL of a data source"
+        }
+      },
+      "filters": {
+        "type": "object",
+        "description": "Optional filters to narrow down the search results",
+        "properties": {
+          "date_range": {
+            "type": "array",
+            "description": "Date range for filtering the results",
+            "items": {
+              "type": "string"
+            }
+          },
+          "categories": {
+            "type": "array",
+            "description": "Categories to filter the results",
+            "items": {
+              "type": "string",
+              "description": "Name of a category"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "date_range",
+          "categories"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}
