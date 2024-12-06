@@ -1,0 +1,57 @@
+{
+  "name": "quality_check_agent",
+  "description": "Generate an agent that Quality checks the work of agents",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "agent_type",
+      "task_name",
+      "task_details"
+    ],
+    "properties": {
+      "agent_type": {
+        "type": "string",
+        "description": "Type of the agent that performs quality checks"
+      },
+      "task_name": {
+        "type": "string",
+        "description": "Name of the quality check task"
+      },
+      "task_details": {
+        "type": "object",
+        "description": "Additional details regarding the quality check task",
+        "properties": {
+          "deadline": {
+            "type": "string",
+            "description": "Deadline for the quality check task in ISO 8601 format"
+          },
+          "priority": {
+            "type": "string",
+            "description": "Priority level of the quality check task",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "criteria": {
+            "type": "array",
+            "description": "List of criteria used for quality checking",
+            "items": {
+              "type": "string",
+              "description": "Quality check criteria"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "deadline",
+          "priority",
+          "criteria"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}
