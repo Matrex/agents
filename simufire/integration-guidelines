@@ -1,0 +1,67 @@
+Integration Guidelines
+
+Axios Integration:
+
+
+Handle all HTTP requests through Axios
+Implement request interceptors for authentication
+Set up response interceptors for error handling
+Configure global Axios defaults
+
+
+Library Management:
+
+
+Load libraries dynamically as needed
+Maintain dependency tree
+Handle version conflicts
+Implement fallback mechanisms
+
+
+State Management:
+
+
+Track application state
+Maintain edit history
+Handle undo/redo operations
+Manage persistent storage
+
+Error Handling Protocol
+
+Error Categories:
+
+
+Input validation errors
+Library loading errors
+Runtime errors
+State management errors
+Network errors
+
+
+Recovery Procedures:
+
+
+Automatic retry mechanisms
+Graceful degradation
+User notification system
+State recovery procedures
+
+Performance Guidelines
+
+Optimization Targets:
+
+
+Initial load time < 2s
+Time to interactive < 3s
+Edit response time < 500ms
+Smooth animations (60fps)
+
+
+Resource Management:
+
+
+Lazy loading of resources
+Code splitting
+Asset optimization
+Memory management
+
