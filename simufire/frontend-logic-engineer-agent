@@ -1,0 +1,97 @@
+{
+  "name": "frontend_logic_engineer_agent",
+  "description": "Implements JavaScript functionality, manages state and data flow, handles user interactions, implements right-click editing system, and coordinates with library specialists.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "javascript_functions",
+      "state_management",
+      "user_interactions",
+      "coordination"
+    ],
+    "properties": {
+      "javascript_functions": {
+        "type": "array",
+        "description": "List of JavaScript functions to be implemented",
+        "items": {
+          "type": "string",
+          "description": "Name of a JavaScript function"
+        }
+      },
+      "state_management": {
+        "type": "object",
+        "description": "Object representing the state management configuration",
+        "properties": {
+          "initial_state": {
+            "type": "object",
+            "description": "Initial state of the application",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "state_updates": {
+            "type": "array",
+            "description": "List of state update definitions",
+            "items": {
+              "type": "object",
+              "properties": {
+                "update_type": {
+                  "type": "string",
+                  "description": "Type of state update"
+                },
+                "update_value": {
+                  "type": "object",
+                  "description": "Value to update the state to",
+                  "properties": {},
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "update_type",
+                "update_value"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "initial_state",
+          "state_updates"
+        ]
+      },
+      "user_interactions": {
+        "type": "object",
+        "description": "Defines the user interactions handled by the agent",
+        "properties": {
+          "right_click_editing": {
+            "type": "boolean",
+            "description": "Indicates if right-click editing system is implemented"
+          },
+          "click_events": {
+            "type": "array",
+            "description": "List of click events to handle",
+            "items": {
+              "type": "string",
+              "description": "Description of the click event"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "right_click_editing",
+          "click_events"
+        ]
+      },
+      "coordination": {
+        "type": "array",
+        "description": "List of specialists to coordinate with",
+        "items": {
+          "type": "string",
+          "description": "Name of the specialist"
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
