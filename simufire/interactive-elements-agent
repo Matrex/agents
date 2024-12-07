@@ -1,0 +1,79 @@
+{
+  "name": "interactive_elements_engineer",
+  "description": "Creates dynamic UI components and manages interactive features",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "game_mechanics",
+      "interactive_features",
+      "three_d_elements",
+      "ui_components"
+    ],
+    "properties": {
+      "game_mechanics": {
+        "type": "object",
+        "description": "Game mechanics to be implemented using Phaser.js",
+        "properties": {
+          "mechanics": {
+            "type": "array",
+            "description": "List of game mechanics to implement",
+            "items": {
+              "type": "string",
+              "description": "Specific game mechanic"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "mechanics"
+        ]
+      },
+      "interactive_features": {
+        "type": "array",
+        "description": "List of interactive features to manage",
+        "items": {
+          "type": "string",
+          "description": "Specific interactive feature"
+        }
+      },
+      "three_d_elements": {
+        "type": "object",
+        "description": "3D elements to be developed using Three.js",
+        "properties": {
+          "models": {
+            "type": "array",
+            "description": "List of 3D models to create",
+            "items": {
+              "type": "string",
+              "description": "3D model name or identifier"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "models"
+        ]
+      },
+      "ui_components": {
+        "type": "object",
+        "description": "Dynamic UI components to be created",
+        "properties": {
+          "components": {
+            "type": "array",
+            "description": "Array of UI component types",
+            "items": {
+              "type": "string",
+              "description": "Specific UI component type"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "components"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}
