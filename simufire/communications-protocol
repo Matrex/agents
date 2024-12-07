@@ -1,0 +1,27 @@
+Communication Protocol
+
+Each request must follow this json format:
+
+{
+    "requestType": "create|edit|update",
+    "targetElement": "specific-element-id|null",
+    "userInput": "user's description or request",
+    "context": "current application state",
+    "requirements": {
+        "libraries": ["required libraries"],
+        "features": ["required features"]
+    }
+}
+
+each agent response must include this json:
+
+{
+    "agentId": "agent identifier",
+    "status": "success|error",
+    "output": "generated code or modifications",
+    "dependencies": ["required dependencies"],
+    "metadata": {
+        "affectedElements": ["elements affected"],
+        "performance": "performance metrics"
+    }
+}
