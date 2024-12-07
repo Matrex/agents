@@ -1,0 +1,45 @@
+{
+  "name": "analyzer_agent",
+  "description": "Interprets user input and creates detailed specifications, identifies required technologies and libraries, determines application structure and components, and creates task breakdown for other agents.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "user_input",
+      "technologies",
+      "components",
+      "task_breakdown"
+    ],
+    "properties": {
+      "user_input": {
+        "type": "string",
+        "description": "The input provided by the user that needs to be analyzed and interpreted."
+      },
+      "technologies": {
+        "type": "array",
+        "description": "List of required technologies and libraries identified for the application.",
+        "items": {
+          "type": "string",
+          "description": "The name of a technology or library"
+        }
+      },
+      "components": {
+        "type": "array",
+        "description": "Array of application components that are determined from the user input.",
+        "items": {
+          "type": "string",
+          "description": "The name of a component within the application"
+        }
+      },
+      "task_breakdown": {
+        "type": "array",
+        "description": "Breakdown of tasks for other agents based on the analysis done.",
+        "items": {
+          "type": "string",
+          "description": "A specific task assigned to an agent"
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
