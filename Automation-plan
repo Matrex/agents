@@ -1,0 +1,30 @@
+Automation Plan: Create a live web prototyping application that generates web applications on-the-fly based on user prompts, rendered in a simulated web browser container with a URL bar for input.
+
+Output: An interactive web application that allows users to:
+
+Enter prompts in the URL bar to generate new web applications.
+Right-click on elements in the rendered application to request edits.
+View and interact with the generated applications in a simulated web browser environment.
+Inputs:
+
+{user_prompt} (Natural language prompt describing the desired web application)
+Tools Selected:
+
+WebsiteSearchTool: Research web application prototyping tools and frameworks.
+GithubSearchTool: Search for relevant open-source libraries for natural language processing and code generation.
+FileReadTool: Read and modify HTML, CSS, and JavaScript files.
+ScrapeWebsiteTool: Extract code snippets and examples from websites.
+NL2SQLTool: Convert natural language prompts into executable code.
+Agents:
+
+PromptProcessor: Process natural language prompts and extract application requirements.
+CodeGenerator: Generate HTML, CSS, and JavaScript code based on the extracted requirements.
+BrowserSimulator: Set up a simulated web browser environment with a URL bar for user input and rendering the generated applications.
+Tasks:
+
+Process user prompt: Convert {user_prompt} into a structured set of application requirements using natural language processing techniques. (Assigned to: PromptProcessor)
+Generate application code: Based on the extracted requirements, generate HTML, CSS, and JavaScript code for the desired web application. (Assigned to: CodeGenerator)
+Set up browser simulation: Configure a simulated web browser environment with a URL bar for user input and rendering the generated applications. (Assigned to: BrowserSimulator)
+Render application in browser: Load the generated application code in the simulated browser for the user to view and interact with. (Assigned to: BrowserSimulator)
+Handle element edits: Implement functionality to allow users to right-click on elements in the rendered application and request edits, which are then processed by the PromptProcessor and CodeGenerator agents. (Assigned to: BrowserSimulator)
+With this updated plan, the crew should be able to create a live web prototyping application that generates web applications based on user prompts entered in a simulated browser's URL bar, with the ability to request edits by right-clicking on elements in the rendered application.
