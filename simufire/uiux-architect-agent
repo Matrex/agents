@@ -1,0 +1,184 @@
+{
+  "name": "uiux_architect_agent",
+  "description": "UI/UX Architect Agent responsible for designing responsive layouts, creating consistent styling guidelines, managing component hierarchy, ensuring accessibility compliance, and handling animations and transitions.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "layout",
+      "styling_guidelines",
+      "component_hierarchy",
+      "accessibility_features",
+      "animations"
+    ],
+    "properties": {
+      "layout": {
+        "type": "object",
+        "description": "Responsive layout configurations",
+        "properties": {
+          "breakpoints": {
+            "type": "object",
+            "description": "Defines breakpoints for responsive design",
+            "properties": {
+              "mobile": {
+                "type": "number",
+                "description": "Mobile breakpoint in pixels"
+              },
+              "tablet": {
+                "type": "number",
+                "description": "Tablet breakpoint in pixels"
+              },
+              "desktop": {
+                "type": "number",
+                "description": "Desktop breakpoint in pixels"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "mobile",
+              "tablet",
+              "desktop"
+            ]
+          },
+          "grid_system": {
+            "type": "string",
+            "description": "Grid system used for layout"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "breakpoints",
+          "grid_system"
+        ]
+      },
+      "styling_guidelines": {
+        "type": "object",
+        "description": "Consistent styling guidelines for UI components",
+        "properties": {
+          "color_palette": {
+            "type": "array",
+            "description": "Color palette used in the design",
+            "items": {
+              "type": "string",
+              "description": "Color in hexadecimal format"
+            }
+          },
+          "typography": {
+            "type": "object",
+            "description": "Typography settings",
+            "properties": {
+              "font_family": {
+                "type": "string",
+                "description": "Primary font family used"
+              },
+              "font_sizes": {
+                "type": "object",
+                "description": "Font sizes for different text elements",
+                "properties": {
+                  "body": {
+                    "type": "number",
+                    "description": "Font size for body text in pixels"
+                  },
+                  "heading": {
+                    "type": "number",
+                    "description": "Font size for headings in pixels"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "body",
+                  "heading"
+                ]
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "font_family",
+              "font_sizes"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "color_palette",
+          "typography"
+        ]
+      },
+      "component_hierarchy": {
+        "type": "object",
+        "description": "Hierarchy of UI components",
+        "properties": {
+          "components": {
+            "type": "array",
+            "description": "List of components and their relationships",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Name of the component"
+                },
+                "children": {
+                  "type": "array",
+                  "description": "Child components within this component",
+                  "items": {
+                    "type": "string",
+                    "description": "Child component name"
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "children"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "components"
+        ]
+      },
+      "accessibility_features": {
+        "type": "object",
+        "description": "Accessibility compliance features",
+        "properties": {
+          "aria_labels": {
+            "type": "boolean",
+            "description": "Whether ARIA labels are used"
+          },
+          "keyboard_navigation": {
+            "type": "boolean",
+            "description": "Whether keyboard navigation is supported"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "aria_labels",
+          "keyboard_navigation"
+        ]
+      },
+      "animations": {
+        "type": "object",
+        "description": "Settings for animations and transitions",
+        "properties": {
+          "duration": {
+            "type": "number",
+            "description": "Animation duration in milliseconds"
+          },
+          "easing": {
+            "type": "string",
+            "description": "Easing function used for animations"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "duration",
+          "easing"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}
