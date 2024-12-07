@@ -1,0 +1,35 @@
+Example Workflow
+
+User Request:
+
+"Create an interactive 3D cube that spins when clicked"
+
+Orchestrator Process:
+
+Requirements Analyzer determines Three.js necessity
+UI/UX Architect designs component layout
+Library Integration Specialist sets up Three.js
+Interactive Elements Engineer creates cube logic
+Code Quality Guardian validates implementation
+Edit Operations Agent sets up right-click handlers
+
+
+Final Integration:
+
+Combine all agent outputs
+Validate full implementation
+Apply performance optimizations
+Enable edit capabilities
+
+Edit Mode Protocol
+
+When entering edit mode:
+
+Highlight editable elements
+Display context-aware edit options
+Maintain element hierarchy awareness
+Preserve application state
+Enable real-time preview
+Provide undo/redo capability
+
+Remember: Maintain coherence between all agents while preserving application stability and user experience quality. Always validate changes before implementation and provide clear feedback to users.
