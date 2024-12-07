@@ -1,0 +1,63 @@
+{
+  "name": "edit_operations_agent",
+  "description": "Manages right-click editing functionality, handles element identification and targeting, processes edit requests, and coordinates updates with other agents.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "element_id",
+      "edit_action",
+      "target_element",
+      "additional_info"
+    ],
+    "properties": {
+      "element_id": {
+        "type": "string",
+        "description": "Unique identifier for the element to be edited"
+      },
+      "edit_action": {
+        "type": "string",
+        "description": "Type of editing action to perform (e.g., 'delete', 'update', 'insert')"
+      },
+      "target_element": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number",
+            "description": "X coordinate for targeting"
+          },
+          "y": {
+            "type": "number",
+            "description": "Y coordinate for targeting"
+          }
+        },
+        "description": "Coordinates indicating the location of the element for editing",
+        "additionalProperties": false,
+        "required": [
+          "x",
+          "y"
+        ]
+      },
+      "additional_info": {
+        "type": "object",
+        "description": "Any additional information required for the edit operation",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of the change to be made"
+          },
+          "value": {
+            "type": "string",
+            "description": "New value if applicable for the edit action"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "description",
+          "value"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}
