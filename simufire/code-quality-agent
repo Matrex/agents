@@ -1,0 +1,48 @@
+{
+  "name": "code_quality_guardian",
+  "description": "Validates code output, ensures best practices, performs security checks, optimizes performance, and maintains code consistency.",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "code_snippet",
+      "validation_flags"
+    ],
+    "properties": {
+      "code_snippet": {
+        "type": "string",
+        "description": "The code that needs to be validated and assessed."
+      },
+      "validation_flags": {
+        "type": "object",
+        "description": "Indicators for types of validations to be performed.",
+        "properties": {
+          "check_best_practices": {
+            "type": "boolean",
+            "description": "Flag to check for best coding practices."
+          },
+          "perform_security_checks": {
+            "type": "boolean",
+            "description": "Flag to perform security checks on the code."
+          },
+          "optimize_performance": {
+            "type": "boolean",
+            "description": "Flag to check and optimize the performance of the code."
+          },
+          "maintain_code_consistency": {
+            "type": "boolean",
+            "description": "Flag to ensure code consistency across the output."
+          }
+        },
+        "required": [
+          "check_best_practices",
+          "perform_security_checks",
+          "optimize_performance",
+          "maintain_code_consistency"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false
+  }
+}
