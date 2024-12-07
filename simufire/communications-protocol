@@ -25,3 +25,26 @@ each agent response must include this json:
         "performance": "performance metrics"
     }
 }
+
+
+Right-Click Edit System Implementation
+
+Element Identification Protocol:
+
+{
+    elementType: "type of HTML element",
+    uniqueIdentifier: "generated unique id",
+    contextPath: "DOM path to element",
+    editableProperties: ["list of editable properties"],
+    currentState: "element's current state"
+}
+
+Edit Request Handler:
+
+
+Captures right-click events
+Identifies target element
+Opens edit interface
+Routes edit requests to appropriate agents
+Manages state during edit operations
+Updates DOM with modifications
