@@ -1,0 +1,33 @@
+{
+  "name": "scrape_adobestock",
+  "description": "Scrapes data from Adobe Stock",
+  "strict": true,
+  "parameters": {
+    "type": "object",
+    "required": [
+      "search_term",
+      "page_number",
+      "results_per_page",
+      "image_type"
+    ],
+    "properties": {
+      "search_term": {
+        "type": "string",
+        "description": "Term to search for in Adobe Stock"
+      },
+      "page_number": {
+        "type": "number",
+        "description": "The page number to scrape results from"
+      },
+      "results_per_page": {
+        "type": "number",
+        "description": "Number of results to return per page"
+      },
+      "image_type": {
+        "type": "string",
+        "description": "Type of image to filter results by (e.g., 'photos', 'vectors')"
+      }
+    },
+    "additionalProperties": false
+  }
+}
